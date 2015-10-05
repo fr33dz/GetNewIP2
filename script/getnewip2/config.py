@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 ################################################################################
 #                                                                              #
-#                     Script [GetNewIp2] MLMConseil   		        	       #
+#                     Script [GetNewIp2] MLMConseil   		            	       #
 #                    ----------------------------------                        #
 #                      permet d'actualiser l'adresse IP                        #
 #                    et l'envoyée vers une base de données                     #
-#                    ----------------------------------    					   #
+#                    ----------------------------------    			        		   #
 #                   Ce fichier sert a configurer le script                     #
 #                  ----------------------------------------                    #
 #                       langage : Python 2.7                                   #
