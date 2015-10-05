@@ -25,5 +25,5 @@ chmod 755 getnewip2.sh
 update-rc.d getnewip2.sh defaults
 /etc/init.d/getnewip2.sh start
 echo "------------------------Fin d'installation-----------------------------"
-echo "Usage: /etc/init.d/getnewip2 {start|stop}"
+echo "Usage: /etc/init.d/getnewip2.sh {start|stop}"
 exit 1
