@@ -42,3 +42,8 @@ TIMER = 120 # temps d'actualisation de l'adresse IP
 su 
 chmod 755 install.sh
 ./install.sh
+
+3. Desinstallation
+update-rc.d getnewip2 remove
+
+
