@@ -37,10 +37,10 @@ class bdd():
 		con =  None
 		try:
 	    		con = psycopg2.connect(host=str(self.host), port=self.port ,database=str(self.database), user=str(self.user), password=str(self.password))
-				cur = con.cursor()
+			cur = con.cursor()
 			try:
 				req = "UPDATE client_ip SET ipc= '{0}' WHERE idc={1}".format(ipc, idc)  
-    			cur.execute(req)
+    				cur.execute(req)
 	
 			except Exception as err:
 				print "Erreur lors de l'execution de la requete : %s" %err
