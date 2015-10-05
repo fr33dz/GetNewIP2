@@ -7,7 +7,7 @@
 #                      permet d'actualiser l'adresse IP                        #
 #                    et l'envoyée vers une base de données                     #
 #                    ----------------------------------			       #
-#				Ce fichier permet de recuperer l'Adresse IP    #
+#		Ce fichier permet de recuperer l'Adresse I		       #
 #                    ---------------------------------- 		       #									   #
 #                                                                              #
 #                       langage : Python 2.7                                   #
