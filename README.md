@@ -1,5 +1,6 @@
 ### GetNewIP2
-	permet de recuperer l'dresse Ip d'une machine et lenvoyée vers une base de donneés PostgreSQL
+	permet de recuperer l'adresse IP d'une machine et l'envoyée vers une base de donneés PostgreSQL
+	le client X accede avec son navigateur à exemple.dz/client_X sera redirigé vers son serveur ODOO 
 ----------------------------------------------------------------------------------------------------
                                                                               
                      Script [GetNewIP2] MLMConseil                             
