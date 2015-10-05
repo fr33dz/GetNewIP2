@@ -53,6 +53,6 @@
 	./install.sh
 
 #### 3. Desinstallation
-	update-rc.d getnewip2 remove
+	update-rc.d -f getnewip2 remove
 
 
