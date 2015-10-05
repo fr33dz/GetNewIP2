@@ -16,12 +16,20 @@
                        auteur  : Bouslahi Yacine                              
                                                                               
 --------------------------------------------------------------
+### 1.Fonctionnement
 
-### Utilisation 
+	getnewip2.sh : permet d'ajouter le script comme service , il se trouve dans le repertoire  /etc/init.d/ , usage : 		/etc/init.d/getnewip2.sh {start | stop}
+	install.sh : permet d'installer le script.
+	main.py : le programme principale du script.
+	bdd.py : s'occupe de l'envoi des données vers la base de données.
+	myip.py : récupère l'adresse IP de la machine.
+	getnewip2.log : fichier log pour le script, se trouve dans le repertoire  /var/log/
+	README.md : fichier en texte qui explique le fonctionnement , l'utilisation et la configuration du Script
 
-#### 1.Configuration :
 
-	a.dans le repertoire getnewip2 , editer le ficher config.py 
+#### 2.Configuration :
+
+	I.dans le repertoire /script/getnewip2/ , editer le fichier config.py 
 	
 
 	HOST = '127.0.0.1'
@@ -34,7 +42,7 @@
 	ID = 1 # Identifiant du client
 	TIMER = 120 # temps d'actualisation de l'adresse IP
 	
-	b. dans le repertoire /web/client_x/index.php
+	II. dans le repertoire /web/client_x/, editez le fichier index.php
 	
 	define('ID',1);
 	define('PORT_ODOO','8069');
@@ -46,13 +54,16 @@
 	define('PASSWORD', 'php');
 
 
-#### 2.Installation
+#### 3.Installation
+	I. Script Python coté client.
+		su 
+		chmod 755 install.sh
+		./install.sh
 
-	su 
-	chmod 755 install.sh
-	./install.sh
+	II. Script PHP coté serveur.
+		cp /client_1/index.php /var/www/html/
 
-#### 3. Desinstallation
+#### 4. Desinstallation
 	update-rc.d -f getnewip2 remove
 
 
