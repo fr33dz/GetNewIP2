@@ -17,9 +17,9 @@ permet de recuperer l'dresse Ip d'une machine et lenvoyée vers une base de donn
                                                                               
 --------------------------------------------------------------
 
-Utilisation 
+### Utilisation 
 
-1.Configuration :
+#### 1.Configuration :
 
 	dans le repertoire getnewip2 , editer le ficher config.py 
 	
@@ -37,13 +37,13 @@ ID = 1 # Identifiant du client
 TIMER = 120 # temps d'actualisation de l'adresse IP
 
 
-2.Installation
+#### 2.Installation
 
 su 
 chmod 755 install.sh
 ./install.sh
 
-3. Desinstallation
+#### 3. Desinstallation
 update-rc.d getnewip2 remove
 
 
