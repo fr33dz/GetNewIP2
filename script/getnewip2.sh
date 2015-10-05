@@ -8,7 +8,7 @@
 #                    et l'envoyée vers une base de données                     #
 #                    ----------------------------------                        #
 #           Ce fichier permet d'ajouter le script /usr/src/getnewip2/main.py   #
-#                               comme service                                  #
+#                               comme service.                                  #
 #                 -----------------------------------------                    #
 #                       langage : Python 2.7                                   #
 #                       date creation : 30/09/2015                             #
