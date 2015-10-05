@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 ################################################################################
 #                                                                              #
-#                     Script [GetNewIp2] MLMConseil     		               #
+#                     Script [GetNewIp2] MLMConseil   		               #
 #                    ----------------------------------                        #
 #                      permet d'actualiser l'adresse IP                        #
 #                    et l'envoyée vers une base de données                     #
-#                    ----------------------------------						   #
+#                    ----------------------------------          	       #
 #		Ce fichier permet d'inserer  l'Adresse IP vers la base de donnees      #
-#                    ---------------------------------- 					   #									   #
+#                    ---------------------------------- 	       	       #									   #
 #                                                                              #
 #                       langage : Python 2.7                                   #
 #                       date creation : 01/09/2015                             #
@@ -21,49 +21,48 @@ import psycopg2
 import sys
 
 class bdd():
-	def __init__(self, host, dbname, user, password):
+	def __init__(self, host, port, database, user, password):
 		self.host = host
-		self.dbname = dbname
+		self.port = port
+		self.database = database
 		self.user = user
 		self.password = password
-		self.conn = None
+		conn = None
 
-	def connect(self):
-		conn_string = "host=\'"+str(sys.argv[1])+"\' dbname=\'"+str(sys.argv[2])+"\' user=\'"+str(sys.argv[3])+"\' password=\'"+str(sys.argv[4])+"\'"
-
-		print "Connecting to database\n	->%s" % (conn_string)
- 
-		# connection vers le serveur
-		try:
-			self.conn = psycopg2.connect(conn_string)
-			return True
-		except:
-			print "Une erreur est survenue lors de la connexion a la base de données.\n"
-			return False
-
+	
 	def inserer(self, idc, ipc):
 		"""" ipc : @Adresse IP 
-			 idc : id du client"""
-		cursor = self.conn.cursor()
- 		# requete
- 		req = "UPDATE client_ip SET ip = "+str(ipc)+" WHERE id="+str(idc)
-		up = cursor.execute(req)
-		self.conn.commit()
-		self.conn.close()
-		if up:
-			return True
-		else:
-			return False
+			idc : id du client"""
+		
+		con =  None
+		try:
+	    		con = psycopg2.connect(host=str(self.host), port=self.port ,database=str(self.database), user=str(self.user), password=str(self.password))
+				cur = con.cursor()
+			try:
+				req = "UPDATE client_ip SET ipc= '{0}' WHERE idc={1}".format(ipc, idc)  
+    			cur.execute(req)
+	
+			except Exception as err:
+				print "Erreur lors de l'execution de la requete : %s" %err
+				return False 
+				sys.exit(1)
+ 					
+		except psycopg2.DatabaseError, e:
+    			print 'Error %s' % e
+    			sys.exit(1)
+
+		finally:
+
+    			if con:
+				con.commit()
+        			con.close()
+				return True
+
 
 def main():
 
-	conn_string = "host=\'"+str(sys.argv[1])+"\' dbname=\'"+str(sys.argv[2])+"\' user=\'"+str(sys.argv[3])+"\' password=\'"+str(sys.argv[4])+"\'"
-	b = bdd(host, dbname, user, password)
-	b.connect()
-	if b.inserer('192.168.1.123',1):
-		print "La requête a été exécutée avec succès"
-	else:
-		print "probleme d'inssertion"
-
+	b = bdd('192.168.1.10', 5433, 'client','php', 'php')
+	b.inserer(1,'192.168.1.3')
+	
 if __name__ == "__main__":
 	main()
