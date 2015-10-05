@@ -1,12 +1,12 @@
 #!/bin/sh
 ################################################################################
 #                                                                              #
-#                     Script [GetNewIp2] MLMConseil                             #
+#                     Script [GetNewIp2] MLMConseil                            #
 #                    ----------------------------------                        #
-#                      permet dactualiser l'adresse IP                        #
+#                      permet dactualiser l'adresse IP                         #
 #                    et l'envoyée vers une adresse Email                       #
 #                    ----------------------------------                        #
-#                  Ce fichier permet d'installer le Script                         #
+#                  Ce fichier permet d'installer le Script                     #
 #                  ---------------------------------------                     #
 #                       langage : Python 2.7                                   #
 #                       date creation : 30/09/2015                             #
