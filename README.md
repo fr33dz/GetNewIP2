@@ -1,8 +1,8 @@
 ### GetNewIP2
-	permet de recuperer l'adresse IP d'une machine et l'envoyée vers une base de donneés PostgreSQL
-	le client X accede avec son navigateur à exemple.dz/client_X sera redirigé vers son serveur ODOO 
+	Permet de récupérer l'adresse IP d'une machine et l'envoyée vers une base de données PostgreSQL
+	le client X accede avec son navigateur à exemple.dz/client_X , et sera redirigé vers son serveur ODOO 
 ----------------------------------------------------------------------------------------------------
-                                                                              
+----------------------------------------------------------------------------------------------------                                                                              
                      Script [GetNewIP2] MLMConseil                             
                     ----------------------------------                        
                      permet d'actualiser l'adresse IP                        
@@ -19,13 +19,15 @@
 --------------------------------------------------------------
 ### 1.Fonctionnement
 
-	getnewip2.sh : permet d'ajouter le script comme service , il se trouve dans le repertoire  /etc/init.d/ , usage : 		/etc/init.d/getnewip2.sh {start | stop}
+	getnewip2.sh : permet d'ajouter le script comme service , il se trouve dans le répertoire  /etc/init.d/ , usage :       	/etc/init.d/getnewip2.sh {start | stop}
 	install.sh : permet d'installer le script.
 	main.py : le programme principale du script.
 	bdd.py : s'occupe de l'envoi des données vers la base de données.
 	myip.py : récupère l'adresse IP de la machine.
-	getnewip2.log : fichier log pour le script, se trouve dans le repertoire  /var/log/
+	getnewip2.log : fichier log pour le script, se trouve dans le répertoire  /var/log/
+	test_connect : Ce fichier permet de tester la connexion à la base de donneés
 	README.md : fichier en texte qui explique le fonctionnement , l'utilisation et la configuration du Script
+
 
 
 #### 2.Configuration :
