@@ -69,4 +69,5 @@
 #### 4. Desinstallation
 	update-rc.d -f getnewip2 remove
 	rm /etc/init.d/getnewip2.sh 
+	rm -R /usr/src/getnewip2/
 
