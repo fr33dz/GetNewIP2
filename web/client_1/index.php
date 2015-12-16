@@ -50,7 +50,7 @@ echo "<br> idc = ".$idc;
 echo "<br> ipc = ".$ipc;
 echo "<br> name = ".$name;
 echo "</center>";
-header('Location: http:/\/'.$ipc);
+header('Location: http://'.$ipc);
 exit();
 ?>
 
